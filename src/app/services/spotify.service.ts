@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
@@ -13,7 +13,7 @@ export class SpotifyService {
 
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQAGzWK2e8L4s1NOCAAPj5va4XbADo2uw4wW6ATyvcXI8igUu78Dp5O2PqEplX8wwPfmMgI6tFKbng_Px-Y'
+        'Bearer BQAiA9v-pVhDeuXhkhe4jfLOzuiC742iMyCOsGx8XRPitw63brRlahgsmuIKyVmonw8jgKvu4q-HH-Vx-zk'
     });
 
     return this.http.get(url, { headers });
@@ -29,5 +29,9 @@ export class SpotifyService {
     return this.getQuery(`search?q=${term}&type=artist&limit=15`).pipe(
       map(data => data["artists"].items)
     );
+  }
+
+  getArtist(id: string) {
+    return this.getQuery(`artists/${id}`);
   }
 }
