@@ -1,19 +1,19 @@
-import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: "root"
 })
 export class SpotifyService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getQuery(query: string) {
     const url = `https://api.spotify.com/v1/${query}`;
 
     const headers = new HttpHeaders({
       Authorization:
-        "Bearer BQBfRxz2qXyawn1vXddiNVzGd5y8c7o11C1Qq3BW0slhwFCOzk4h6JFcj1MZBleDWoLolLtjn7GEU4ZKC9o"
+        'Bearer BQAGzWK2e8L4s1NOCAAPj5va4XbADo2uw4wW6ATyvcXI8igUu78Dp5O2PqEplX8wwPfmMgI6tFKbng_Px-Y'
     });
 
     return this.http.get(url, { headers });
