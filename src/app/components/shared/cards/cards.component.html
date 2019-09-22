@@ -1,0 +1,19 @@
+<div class="card-columns m-4">
+  <div *ngFor="let item of items" class="card">
+    <img
+      [src]="item.images | noimage"
+      class="card-img-top"
+      alt="Card Image Top"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">
+        <span
+          *ngFor="let artist of item.artists"
+          class="badge badge-pill badge-primary"
+          >{{ artist.name }}</span
+        >
+      </p>
+    </div>
+  </div>
+</div>

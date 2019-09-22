@@ -1,3 +1,12 @@
-<p>
-  search works!
-</p>
+<div class="row">
+  <div class="col">
+    <input
+      #artist
+      type="search"
+      (keyup)="find(artist.value)"
+      class="form-control"
+      placeholder="Find artist ..."
+    />
+  </div>
+</div>
+<app-cards [items]="artists"></app-cards>
